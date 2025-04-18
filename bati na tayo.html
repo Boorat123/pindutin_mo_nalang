@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bati na ba tayo? 🥺</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffe6f0, #ffe0ec);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding-top: 100px;
+      color: #c2185b;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 40px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .btn {
+      font-size: 20px;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 30px;
+      margin: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .yes-btn {
+      background: #ff69b4;
+      color: white;
+    }
+
+    .no-btn {
+      background: #f8bbd0;
+      color: #880e4f;
+    }
+
+    .yes-btn:hover {
+      background: #ff1493;
+    }
+
+    .no-btn:hover {
+      background: #f48fb1;
+    }
+
+    #meme {
+      margin-top: 30px;
+      display: none;
+      animation: pop 0.8s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bati na ba tayo, Rhianne? 🥺</h1>
+
+  <button class="btn yes-btn" id="yesBtn" onclick="yesClicked()">Yes 😚</button>
+  <button class="btn no-btn" onclick="noClicked()">No 😢</button>
+
+  <p id="response" style="margin-top: 40px; font-size: 1.5em;"></p>
+
+  <div id="meme">
+    <img src="https://i.imgflip.com/4/4t0m5.jpg" alt="Happy Meme" width="300" style="border-radius: 20px; box-shadow: 0 0 10px #f8bbd0;">
+    <p style="font-size: 1.2em; color: #880e4f; margin-top: 10px;">YAAAY Bati na tayo!! 😄💖</p>
+  </div>
+
+  <script>
+    let yesBtn = document.getElementById("yesBtn");
+    let response = document.getElementById("response");
+    let yesSize = 20;
+    let noClicks = 0;
+    let meme = document.getElementById("meme");
+
+    function yesClicked() {
+      response.innerHTML = "Yay! I love youuu 💖 Bati na tayo ah 😚💐";
+      meme.style.display = "block";
+    }
+
+    function noClicked() {
+      noClicks++;
+      yesSize += 5;
+      yesBtn.style.fontSize = yesSize + "px";
+      response.innerHTML = "🥺 sige na please...";
+    }
+  </script>
+
+</body>
+</html>
